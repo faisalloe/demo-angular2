@@ -2,7 +2,7 @@
 This is a very simple demo web application designed as a starting point
 interviews, training or just experimenting. This demo application uses:
 
-* AngularJS - UI framework
+* AngularJS-2 - UI framework
 * Spring - Dependency injection
 * Bootstrap - CSS styling
 * Selenium - Control a web browser for UI testing
@@ -37,6 +37,17 @@ take this project and use TDD and BDD to add a new section to the front
 page that takes a number as an input and returns it as a Roman Numeral.
 
 Some basics for getting the demo app up and running:
+
+Please install web dependencies using following command
+
+go the following folder
+
+demo-angular2/src/main/resources
+
+and run following command. which will create node_modules folder with all package.json dependencies
+
+```npm install```
+
 
 Run all the unit tests:
 ```mvn test```
