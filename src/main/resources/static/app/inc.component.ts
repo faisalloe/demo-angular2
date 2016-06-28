@@ -13,11 +13,9 @@ import {AjaxRequestService} from './ajax.req.service';
 
 export class IncComponent {
 
-
+    result: number=0;
     constructor(private ajaxService: AjaxRequestService){
     }
-
-    result: number;
 
     increment(){
 

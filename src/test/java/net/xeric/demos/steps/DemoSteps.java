@@ -28,10 +28,12 @@ public class DemoSteps {
     @Given("^I am on the demo page$")
     public void i_am_on_the_demo_page() throws Throwable {
         demoPage.go();
+        Thread.sleep(5000); // wait a bit
     }
 
     @When("^I add the numbers (-?\\d+) and (-?\\d+)$")
     public void i_add_the_numbers_and(int arg1, int arg2) throws Throwable {
+
        demoPage.addNumbers(arg1, arg2);
     }
 
