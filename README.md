@@ -5,7 +5,8 @@ interviews, training or just experimenting. This demo application uses:
 * AngularJS-2 - UI framework
 * Spring - Dependency injection
 * Bootstrap - CSS styling
-* Selenium - Control a web browser for UI testing
+* Selenium - Control a web browser for UI testing (Latest version of FF is not supported yet, Please install Firefox 46.0 or 
+lower to run cucumber UI tests)
 * Cucumber - Behavior Based Development
 * JUnit - Unit testing
 
