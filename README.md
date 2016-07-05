@@ -43,7 +43,7 @@ Please install web dependencies using following command
 
 go the following folder
 
-demo-angular2/src/main/resources
+demo-angular2/src/main/resources/static
 
 and run following command. which will create node_modules folder with all package.json dependencies
 
