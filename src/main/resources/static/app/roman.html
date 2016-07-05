@@ -17,6 +17,6 @@
 
 
     <div *ngIf="err" class="text-danger">{{err}}</div>
-    <span  *ngIf="!err" id="roman-result" style="font-size: 500%">{{result}}</span>
+    <span  *ngIf="result && !err" id="roman-result" style="font-size: 500%">{{result}}</span>
 
 </div>

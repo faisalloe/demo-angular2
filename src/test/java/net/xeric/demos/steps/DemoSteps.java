@@ -28,7 +28,6 @@ public class DemoSteps {
     @Given("^I am on the demo page$")
     public void i_am_on_the_demo_page() throws Throwable {
         demoPage.go();
-        Thread.sleep(5000); // wait a bit
     }
 
     @When("^I add the numbers (-?\\d+) and (-?\\d+)$")
@@ -68,7 +67,6 @@ public class DemoSteps {
     
     @Then("^the roman numeral is (.+)$")
     public void the_numeral_is(String result) throws Throwable {
-    	Thread.sleep(1000); // wait a bit
         assertEquals(result, demoPage.getRomanResults());
     }
     

@@ -91,6 +91,18 @@
 		</dependency>
 
 
+		<dependency>
+			<groupId>org.seleniumhq.selenium.fluent</groupId>
+			<artifactId>fluent-selenium</artifactId>
+			<version>1.14.5</version>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.seleniumhq.selenium</groupId>
+					<artifactId>selenium-java</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 
 	</dependencies>
 	
@@ -106,7 +118,7 @@
             </configuration>
         </plugin>
 
-<!--
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -118,7 +130,9 @@
 					</dependency>
 				</dependencies>
 			</plugin>
--->
+
+
+
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>

@@ -9,6 +9,6 @@ import org.springframework.stereotype.Service;
 public class CounterService {
     int count = 0;
     public int increment() {
-        return count++;
+        return ++count;
     }
 }

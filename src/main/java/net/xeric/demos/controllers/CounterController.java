@@ -14,7 +14,6 @@ public class CounterController {
 
     @Autowired
     CounterService counterService;
-    int counter = 1;
     @RequestMapping("/counter")
     public @ResponseBody int count() {
 

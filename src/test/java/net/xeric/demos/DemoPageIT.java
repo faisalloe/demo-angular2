@@ -30,7 +30,7 @@ public class DemoPageIT {
     DemoPage demoPage;
 
     @Test
-    public void simpleTest() {
+    public void simpleTest() throws InterruptedException {
         demoPage.go();
         demoPage.addNumbers(5,5);
         assertEquals(10, demoPage.getAdderResults());
