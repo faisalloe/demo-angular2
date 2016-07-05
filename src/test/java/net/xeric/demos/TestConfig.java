@@ -13,18 +13,15 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 public class TestConfig {
 
-    //private FirefoxDriver driver;
-/*
-    @Bean
-    public FirefoxDriver getWebDriver(){
-        driver = new FirefoxDriver();
-        driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
-        return driver;
-    }
-*/
     @Bean(destroyMethod = "quit", name = "webDriver")
-    public WebDriver getWebDriver() {
-        final WebDriver driver = new FirefoxDriver();
+    public FirefoxDriver getWebDriver() {
+
+        /*
+            NgWebDriver needs raw driver will figure out later
+            how to use it with WebDriver
+         */
+
+        final FirefoxDriver driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 ;
         return driver;
