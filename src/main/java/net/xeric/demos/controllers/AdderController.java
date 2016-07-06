@@ -15,8 +15,11 @@ public class AdderController {
     AdderService adderService;
 
     @RequestMapping("/adder")
-        public int adder(@RequestParam(value="firstNumber", defaultValue="0") int firstNumber, @RequestParam(value="secondNumber", defaultValue="0") int secondNumber) {
+        public int adder(@RequestParam(value="firstNumber", defaultValue="0") int firstNumber, @RequestParam(value="secondNumber", defaultValue="0") int secondNumber) throws InterruptedException {
 
+        System.out.println("--> wait start");
+        Thread.sleep(100000);
+        System.out.println("--> wait end");
         return adderService.add(firstNumber, secondNumber);
         }
 
