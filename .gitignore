@@ -5,3 +5,5 @@ demo-angular2.iws
 src/main/resources/static/app/*.js
 src/main/resources/static/app/*.js.map
 src/main/resources/static/node_modules
+.DS_Store
+

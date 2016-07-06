@@ -3,6 +3,7 @@ package net.xeric.demos.pages;
 import com.paulhammant.ngwebdriver.NgWebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.seleniumhq.selenium.fluent.FluentWebDriver;
@@ -25,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 public class DemoPage {
 
     @Autowired
-    private FirefoxDriver webDriver;
+    private ChromeDriver webDriver;
 
     private FluentWebDriver fluentWebDriver;
     private NgWebDriver ngWebDriver;

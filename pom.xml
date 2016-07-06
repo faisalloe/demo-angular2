@@ -21,6 +21,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
+		<chrome.binary>${project.basedir}/src/test/javascript/lib/chrome/${os.name}/chromedriver</chrome.binary>
 	</properties>
 
 	<dependencies>
@@ -195,7 +196,9 @@
 							<goal>stop</goal>
 						</goals>
 					</execution>
+
 				</executions>
+
 			</plugin>
 
 			<plugin>
@@ -210,7 +213,22 @@
 						</goals>
 					</execution>
 				</executions>
+				<configuration>
+					<systemPropertyVariables>
+						<webdriver.chrome.driver>${chrome.binary}</webdriver.chrome.driver>
+					</systemPropertyVariables>
+				</configuration>
 			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.7.1</version>
+				<configuration>
+					<systemPropertyVariables>
+						<webdriver.chrome.driver>${chrome.binary}</webdriver.chrome.driver>
+					</systemPropertyVariables>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 	

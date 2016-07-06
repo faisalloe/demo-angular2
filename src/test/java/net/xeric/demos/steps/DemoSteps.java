@@ -58,11 +58,6 @@ public class DemoSteps {
     public void convert_numbers_to_roman(int arg1) throws Throwable {
        demoPage.toRoman(arg1);
     }
-
-    @When("^I pass numbers (\\d+) and (\\d+)$")
-    public void convert_and_add_romans(int arg1, int agr2) throws Throwable {
-    	 throw new PendingException("Functionality note implemented yet");
-    }
     
     
     @Then("^the roman numeral is (.+)$")

@@ -26,8 +26,8 @@ public class CounterControllerIT {
 
     @Test
     public void testCount() throws Exception {
-        assertEquals(0,counterController.count());
         assertEquals(1,counterController.count());
         assertEquals(2,counterController.count());
+        assertEquals(3,counterController.count());
     }
 }
