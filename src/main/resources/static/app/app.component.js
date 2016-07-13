@@ -9,10 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var ajax_req_service_1 = require('./ajax.req.service');
-var inc_component_1 = require('./inc.component');
-var addition_component_1 = require('./addition.component');
-var roman_component_1 = require('./roman.component');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Angular 2 Demo Applications';
@@ -24,7 +22,7 @@ var AppComponent = (function () {
             providers: [
                 ajax_req_service_1.AjaxRequestService,
             ],
-            directives: [inc_component_1.IncComponent, addition_component_1.AdditionComponent, roman_component_1.RomanComponent]
+            directives: [router_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

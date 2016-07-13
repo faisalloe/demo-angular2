@@ -1,10 +1,10 @@
 package net.xeric.demos.pages;
 
 import com.paulhammant.ngwebdriver.NgWebDriver;
+import com.paulhammant.ngwebdriver.NgWebDriverAngular2;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.seleniumhq.selenium.fluent.FluentWebDriver;
 import org.seleniumhq.selenium.fluent.Period;
@@ -12,8 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.time.Duration;
-import java.time.Instant;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -26,11 +24,13 @@ import java.util.concurrent.TimeUnit;
 public class DemoPage {
 
     @Autowired
-    private ChromeDriver webDriver;
+    private WebDriver webDriver;
 
     private FluentWebDriver fluentWebDriver;
-    private NgWebDriver ngWebDriver;
+   // private NgWebDriver ngWebDriver;
 
+
+    private NgWebDriverAngular2 ngWebDriver;
 
 
     @Autowired
@@ -42,16 +42,20 @@ public class DemoPage {
     public void init(){
 
         fluentWebDriver = new FluentWebDriver(webDriver);
-        ngWebDriver = new NgWebDriver(webDriver);
+        ngWebDriver = new NgWebDriverAngular2((JavascriptExecutor) webDriver);
+        //ngWebDriverAngular2 = new NgWebDriverAngular2((JavascriptExecutor) webDriver);
     }
+
 
 
     void waitForResponse() {
 
-        //long startTime = System.nanoTime();
+        long startTime = System.nanoTime();
         ngWebDriver.waitForAngularRequestsToFinish();
-        //long stopTime = System.nanoTime();
-        //long secs = TimeUnit.SECONDS.convert((stopTime - startTime), TimeUnit.NANOSECONDS);
+
+        long stopTime = System.nanoTime();
+        long secs = TimeUnit.SECONDS.convert((stopTime - startTime), TimeUnit.NANOSECONDS);
+        System.out.println("Seconds - "+secs);
 
     }
 
@@ -61,7 +65,7 @@ public class DemoPage {
         waitForResponse();
     }
 
-final int WAIT_TIME_SEC = 5;
+final int WAIT_TIME_SEC = 3;
     void sendFluentKey(FluentWebDriver fwd, String keyName, String keyValue){
 
         fwd.input(By.id(keyName)).within(Period.secs(WAIT_TIME_SEC)).sendKeys(keyValue);
@@ -76,10 +80,6 @@ final int WAIT_TIME_SEC = 5;
     }
 
     public void addNumbers(int x, int y) {
-
-        //webDriver.findElement(By.id("adder-first-number")).sendKeys(Integer.toString(x));
-        //webDriver.findElement(By.id("adder-second-number")).sendKeys(Integer.toString(y));
-        //webDriver.findElement(By.id("adder-button")).click();
 
         sendFluentKey(fluentWebDriver, "adder-first-number", Integer.toString(x));
         sendFluentKey(fluentWebDriver, "adder-second-number", Integer.toString(y));
@@ -102,29 +102,23 @@ final int WAIT_TIME_SEC = 5;
     public int getAdderResults() {
 
         return Integer.parseInt(getFluentSpanText(fluentWebDriver, "adder-result"));
-        //return Integer.parseInt(webDriver.findElement(By.id("adder-result")).getText());
 
     }
 
     public int getCount() {
 
         return Integer.parseInt(getFluentDivText(fluentWebDriver, "counter"));
-        //return Integer.parseInt(webDriver.findElement(By.id("counter")).getText());
 
     }
 
     public void clickIncrement() {
 
         fluentClick(fluentWebDriver, "increment-button");
-        //webDriver.findElement(By.id("increment-button")).click();
     }
 
 
     public void toRoman(int x){
 
-
-        //webDriver.findElement(By.id("to-roman-number")).sendKeys(Integer.toString(x));
-    	//webDriver.findElement(By.id("roman-button")).click();
         sendFluentKey(fluentWebDriver, "to-roman-number", Integer.toString(x));
         fluentClick(fluentWebDriver, "roman-button");
     }
@@ -133,7 +127,6 @@ final int WAIT_TIME_SEC = 5;
 
         return getFluentSpanText(fluentWebDriver, "roman-result");
 
-        //return webDriver.findElement(By.id("roman-result")).getText();
     }
     
 }

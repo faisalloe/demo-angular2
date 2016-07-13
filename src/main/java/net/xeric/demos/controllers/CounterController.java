@@ -16,7 +16,6 @@ public class CounterController {
     CounterService counterService;
     @RequestMapping("/counter")
     public @ResponseBody int count() {
-
         return counterService.increment();
     }
 }

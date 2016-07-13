@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.3.3.RELEASE</version>
+		<version>1.3.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -22,6 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<chrome.binary>${project.basedir}/src/test/javascript/lib/chrome/${os.name}/chromedriver</chrome.binary>
+		<spring.v>1.3.6.RELEASE</spring.v>
 	</properties>
 
 	<dependencies>
@@ -33,6 +34,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -73,7 +75,7 @@
 		<dependency>
 			<groupId>com.paulhammant</groupId>
 			<artifactId>ngwebdriver</artifactId>
-			<version>0.9.6</version>
+			<version>0.9.7-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 
