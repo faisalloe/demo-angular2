@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import {AjaxRequestService} from './ajax.req.service';
+import {IncComponent} from './inc.component';
+import {AdditionComponent} from './addition.component';
+import {RomanComponent} from './roman.component';
+
+
 
 @Component({
     selector: 'app',
@@ -9,7 +14,7 @@ import {AjaxRequestService} from './ajax.req.service';
     providers: [
         AjaxRequestService,
     ],
-    directives: [ROUTER_DIRECTIVES]
+    directives: [IncComponent, AdditionComponent, RomanComponent]
 })
 
 

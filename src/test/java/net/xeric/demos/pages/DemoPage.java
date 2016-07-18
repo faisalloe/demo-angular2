@@ -1,7 +1,6 @@
 package net.xeric.demos.pages;
 
 import com.paulhammant.ngwebdriver.NgWebDriver;
-import com.paulhammant.ngwebdriver.NgWebDriverAngular2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -27,10 +26,9 @@ public class DemoPage {
     private WebDriver webDriver;
 
     private FluentWebDriver fluentWebDriver;
-   // private NgWebDriver ngWebDriver;
 
 
-    private NgWebDriverAngular2 ngWebDriver;
+    private NgWebDriver ngWebDriver;
 
 
     @Autowired
@@ -42,8 +40,7 @@ public class DemoPage {
     public void init(){
 
         fluentWebDriver = new FluentWebDriver(webDriver);
-        ngWebDriver = new NgWebDriverAngular2((JavascriptExecutor) webDriver);
-        //ngWebDriverAngular2 = new NgWebDriverAngular2((JavascriptExecutor) webDriver);
+        ngWebDriver = new NgWebDriver((JavascriptExecutor) webDriver);
     }
 
 
