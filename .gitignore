@@ -8,3 +8,6 @@ src/main/resources/static/node_modules
 src/main/resources/static/typings/
 src/main/resources/static/app/*.js.map
 src/main/resources/static/app/*.js
+bdd-demo.iml
+bdd-demo.ipr
+bdd-demo.iws
